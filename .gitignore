@@ -1,1 +1,3 @@
 node_modules
+database/bins/*
+!database/bins/.gitkeep
