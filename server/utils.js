@@ -13,12 +13,21 @@ function randomId(length) {
  }
 
 function createBin(data) {
-    // fs.readdirSync("./database/bins")
-    const id = randomId(8);
+    const binNames = fs.readdirSync(`${__dirname}/database/bins`);
+    let id = randomId(8);
+    while (binNames.indexOf(`${id}.json`) === -1) {
+        id = randomId(8);
+    }
+    
     const content = JSON.stringify(data);
     fs.appendFileSync(`${__dirname}/database/bins/${id}.json`, content);
     return id;
 }
+
+function getBin(id) {
+    
+}
+
 module.exports = {
     createBin
 }
