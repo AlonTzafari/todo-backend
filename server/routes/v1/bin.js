@@ -1,6 +1,7 @@
 "use strict"
 const express = require("express");
 const fs = require("fs");
+const {createBin} = require("../../utils");
 
 const bin = express();
 
@@ -15,7 +16,8 @@ bin.get("/:id", (request, response) => {
 });
 //create
 bin.post("/", (request, response) => {
-    response.send(`new bin created`);
+    const id = createBin(request.body);
+    response.send(`new bin ${id} created`);
 });
 //update
 bin.put("/:id", (request, response) => {
