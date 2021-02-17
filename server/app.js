@@ -1,5 +1,9 @@
 "use strict"
-const {Router} = require("express");
-const router = Router();
+const express = require("express");
+const api = require("./routes");
 
-module.exports = router;
+const app = express();
+
+app.use("/api", api);
+
+module.exports = app;
