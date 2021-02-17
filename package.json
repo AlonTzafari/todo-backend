@@ -16,7 +16,7 @@
     "url": "https://github.com/AlonTzafari/todo-backend/issues"
   },
   "homepage": "https://github.com/AlonTzafari/todo-backend#readme",
-  "devDependencies": {
+  "dependencies": {
     "express": "^4.17.1"
   }
 }
